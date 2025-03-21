@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คุณเป็นนักเทรดแบบไหน? - แบบทดสอบ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container" id="landing-page">
+        <div class="quiz-box">
+            <div class="header">
+                <h1>คุณเป็นนักเทรดแบบไหน?</h1>
+                <h2>ค้นพบสไตล์ของคุณวันนี้!</h2>
+            </div>
+            <div class="description">
+                <p>การรู้จักสไตล์การเทรดของตัวเองเป็นก้าวสำคัญในการพัฒนากลยุทธ์การลงทุนที่เหมาะสม ทำแบบทดสอบนี้เพื่อค้นพบว่าคุณเป็นนักเทรดประเภทไหน และรับคำแนะนำที่เหมาะกับสไตล์ของคุณ</p>
+            </div>
+            <form id="contact-form">
+                <div class="form-group name-group">
+                    <div class="name-fields">
+                        <div class="first-name">
+                            <label for="first-name">ชื่อ <span class="required">*</span></label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="last-name">
+                            <label for="last-name">นามสกุล <span class="required">*</span></label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">อีเมล <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                </div>
+                <div class="form-group">
+                    <label for="line-id">LINE ID <span class="required">*</span></label>
+                    <input type="text" id="line-id" name="line-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">เบอร์โทรศัพท์ <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="กรุณากรอกเบอร์โทรศัพท์">
+                </div>
+                <button type="button" id="start-quiz-btn" class="btn">เริ่มทำแบบทดสอบ</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="quiz-page" style="display: none;">
+        <div class="quiz-box">
+            <div class="header">
+                <h1>แบบทดสอบ: คุณเป็นนักเทรดแบบไหน?</h1>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="question-count">คำถามที่ <span id="current-question">1</span> จาก <span id="total-questions">6</span></div>
+            </div>
+            <div id="question-container">
+                <!-- Questions will be inserted here dynamically -->
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn secondary-btn" disabled>ก่อนหน้า</button>
+                <button id="next-btn" class="btn">ถัดไป</button>
+                <button id="submit-btn" class="btn" style="display: none;">ดูผลลัพธ์</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="results-page" style="display: none;">
+        <div class="quiz-box result-box">
+            <div class="header">
+                <h1>ผลลัพธ์แบบทดสอบ</h1>
+                <h2>ค้นพบแล้ว! คุณคือ...</h2>
+            </div>
+            <div class="result-content">
+                <div class="result-icon" id="result-icon">
+                    <!-- Icon will be inserted here -->
+                </div>
+                <h2 class="result-title" id="result-title"><!-- Result title will be inserted here --></h2>
+                <div class="result-description" id="result-description">
+                    <!-- Result description will be inserted here -->
+                </div>
+                <div class="result-traits">
+                    <h3>บุคลิกของคุณในการเทรด</h3>
+                    <ul id="result-traits">
+                        <!-- Traits will be inserted here -->
+                    </ul>
+                </div>
+                <div class="result-warnings">
+                    <h3>ข้อควรระวัง</h3>
+                    <ul id="result-warnings">
+                        <!-- Warnings will be inserted here -->
+                    </ul>
+                </div>
+                <div class="result-advice">
+                    <h3>คำแนะนำ</h3>
+                    <p id="result-advice"><!-- Advice will be inserted here --></p>
+                </div>
+            </div>
+            <button id="restart-btn" class="btn">ทำแบบทดสอบอีกครั้ง</button>
+            <div class="share-results">
+                <p>แชร์ผลลัพธ์ของคุณ</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
